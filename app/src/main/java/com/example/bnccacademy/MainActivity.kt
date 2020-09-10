@@ -18,12 +18,21 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             openActivity2()
         }
+
+        button2.setOnClickListener {
+            openActivity3()
+        }
     }
 
     private fun openActivity2(){
         val intent = Intent(this, SecondActivity::class.java).apply {
             putExtra(TESTING, "Indonesia")
         }
+        startActivity(intent)
+    }
+
+    private fun openActivity3(){
+        val intent = Intent(this, HotlineActivity::class.java)
         startActivity(intent)
     }
 }

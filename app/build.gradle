@@ -37,4 +37,10 @@ dependencies {
     // For cardview and recyclerview
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    // For okhttp
+    implementation 'com.squareup.okhttp3:okhttp:4.8.1'
+
+    // For image
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
