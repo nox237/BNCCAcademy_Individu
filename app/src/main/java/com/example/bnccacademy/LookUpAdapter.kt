@@ -25,4 +25,11 @@ class LookUpAdapter(private val lookUpList: MutableList<LookUpData>): RecyclerVi
         // Tempat adapter nanya berapa banyak data yang mw dirender
         return lookUpList.size
     }
+
+    fun updateData(newList: List<LookUpData>) {
+        lookUpList.clear()
+        lookUpList.addAll(newList)
+
+        notifyDataSetChanged()
+    }
 }
