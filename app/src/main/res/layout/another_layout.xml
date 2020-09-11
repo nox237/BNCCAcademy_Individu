@@ -67,16 +67,17 @@
             android:paddingStart="5sp"
             android:paddingEnd="5sp"/>
 
+
         <EditText
             android:layout_width="235sp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:fontFamily="@font/karla"
             android:textSize="16sp"
-            android:autofillHints="search cities"
-            android:inputType=""
             android:id="@+id/search_input"
-            tools:ignore="LabelFor" />
+            android:hint="@string/type_to_search"
+            android:inputType="text"
+            android:autofillHints="" />
 
         <ImageView
             android:id="@+id/search_delete_btn"

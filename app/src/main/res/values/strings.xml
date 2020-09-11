@@ -17,4 +17,5 @@
     <string name="hotline">Hotline</string>
     <string name="check_emergency_number_to_contact">Check emergency number to contact</string>
     <string name="see_details_by_province_all_over_indonesia">See details by province all over Indonesia</string>
+    <string name="type_to_search">Type to Search...</string>
 </resources>

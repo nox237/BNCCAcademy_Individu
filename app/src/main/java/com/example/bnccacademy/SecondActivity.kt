@@ -1,6 +1,8 @@
 package com.example.bnccacademy
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,13 +11,14 @@ import kotlinx.android.synthetic.main.another_layout.*
 import okhttp3.*
 import org.json.JSONArray
 import java.io.IOException
-import java.lang.Exception
 
 class SecondActivity : AppCompatActivity() {
 
     private val okHttpClient = OkHttpClient()
 
     private val mockLookUpList = mutableListOf<LookUpData>()
+
+    private var searchList = mutableListOf<LookUpData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,19 +27,38 @@ class SecondActivity : AppCompatActivity() {
         val lookUpAdapter = LookUpAdapter(mockLookUpList)
         rvLookUp.layoutManager = LinearLayoutManager(this)
         rvLookUp.adapter = lookUpAdapter
+
         val value = intent.getStringExtra(MainActivity.TESTING)
         title_activity.text = value
+
+        val request = Request.Builder().url("https://api.kawalcorona.com/indonesia/provinsi/").build()
+        okHttpClient.newCall(request).enqueue(getCallback(lookUpAdapter))
 
         back_button.setOnClickListener {
             onBackPressed()
         }
 
-        search_delete_btn.setOnClickListener {
+        search_input.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+                searchList.clear()
+                mockLookUpList.forEach {
+                    if (it.provinceName.toLowerCase().contains(p0.toString().toLowerCase())){
+                        searchList.add(it)
+                    }
+                }
+                val new_lookUpAdapter = LookUpAdapter(searchList)
+                rvLookUp.adapter = new_lookUpAdapter
+            }
 
-        }
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
-        val request = Request.Builder().url("https://api.kawalcorona.com/indonesia/provinsi/").build()
-        okHttpClient.newCall(request).enqueue(getCallback(lookUpAdapter))
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+        })
+
     }
 
     private fun getCallback(lookUpAdapter: LookUpAdapter): Callback {
@@ -66,6 +88,7 @@ class SecondActivity : AppCompatActivity() {
                     }
 
                     this@SecondActivity.runOnUiThread{
+                        searchList.addAll(lookupListFromNetwork)
                         lookUpAdapter.updateData(lookupListFromNetwork)
                     }
 
