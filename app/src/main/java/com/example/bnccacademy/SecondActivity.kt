@@ -1,8 +1,10 @@
 package com.example.bnccacademy
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,6 +13,7 @@ import kotlinx.android.synthetic.main.another_layout.*
 import okhttp3.*
 import org.json.JSONArray
 import java.io.IOException
+import java.util.*
 
 class SecondActivity : AppCompatActivity() {
 
@@ -39,15 +42,27 @@ class SecondActivity : AppCompatActivity() {
         }
 
         search_input.addTextChangedListener(object : TextWatcher {
+            @SuppressLint("SetTextI18n")
             override fun afterTextChanged(p0: Editable?) {
                 searchList.clear()
                 mockLookUpList.forEach {
-                    if (it.provinceName.toLowerCase().contains(p0.toString().toLowerCase())){
+                    if (it.provinceName.toLowerCase(Locale.getDefault()).contains(p0.toString().toLowerCase(
+                            Locale.getDefault()))) {
                         searchList.add(it)
                     }
                 }
-                val new_lookUpAdapter = LookUpAdapter(searchList)
-                rvLookUp.adapter = new_lookUpAdapter
+
+                val newlookUpAdapter = LookUpAdapter(searchList)
+                rvLookUp.adapter = newlookUpAdapter
+
+                if (searchList.isEmpty()){
+                    emptyView.text = "There is no province named \"$p0\""
+                    rvLookUp.visibility = View.GONE
+                    emptyView.visibility = View.VISIBLE
+                } else {
+                    rvLookUp.visibility = View.VISIBLE
+                    emptyView.visibility = View.GONE
+                }
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
