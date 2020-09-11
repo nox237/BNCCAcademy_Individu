@@ -31,6 +31,9 @@ class SecondActivity : AppCompatActivity() {
         rvLookUp.layoutManager = LinearLayoutManager(this)
         rvLookUp.adapter = lookUpAdapter
 
+        // Not Showing until the request has been done
+        rvLookUp.visibility = View.GONE
+
         val value = intent.getStringExtra(MainActivity.TESTING)
         title_activity.text = value
 
@@ -103,8 +106,10 @@ class SecondActivity : AppCompatActivity() {
                     }
 
                     this@SecondActivity.runOnUiThread{
+                        progressBar.visibility = View.GONE
                         searchList.addAll(lookupListFromNetwork)
                         lookUpAdapter.updateData(lookupListFromNetwork)
+                        rvLookUp.visibility = View.VISIBLE
                     }
 
                 } catch (e: Exception) {
