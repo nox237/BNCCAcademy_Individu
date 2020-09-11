@@ -22,6 +22,7 @@
         android:src="@drawable/virus" />
 
     <LinearLayout
+        android:id="@+id/Layout_numberOfCases"
         android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -56,6 +57,19 @@
             android:gravity="center"/>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar_numberOfCases"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="65dp"
+        android:layout_height="65sp"
+        android:progressDrawable="@drawable/circular_progress_bar_white"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.771"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.667" />
 
     <TextView
         android:id="@+id/textView8"
@@ -110,6 +124,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <ProgressBar
+                android:padding="10sp"
+                android:id="@+id/progressBar_numberOfPositiveCases"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:progressDrawable="@drawable/circular_progress_bar_white" />
+
             <TextView
                 android:id="@+id/numberOfPositiveCases"
                 android:layout_width="match_parent"
@@ -122,6 +144,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/numberOfPositiveCases_Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -146,7 +169,15 @@
             app:layout_constraintStart_toEndOf="@+id/LinearLayout4"
             app:layout_constraintTop_toTopOf="parent">
 
+            <ProgressBar
+                android:id="@+id/progressBar_numberOfDeathCases"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:progressDrawable="@drawable/circular_progress_bar_white" />
+
             <TextView
+                android:padding="10sp"
                 android:id="@+id/numberOfDeathCases"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -158,6 +189,7 @@
                 android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/numberOfDeathCases_Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -182,6 +214,14 @@
             app:layout_constraintStart_toEndOf="@+id/LinearLayout6"
             app:layout_constraintTop_toTopOf="parent">
 
+            <ProgressBar
+                android:padding="10sp"
+                android:id="@+id/progressBar_numberOfRecoveredCases"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:progressDrawable="@drawable/circular_progress_bar_white" />
+
             <TextView
                 android:id="@+id/numberOfRecoveredCases"
                 android:layout_width="match_parent"
@@ -194,6 +234,7 @@
                 android:textSize="20sp"/>
 
             <TextView
+                android:id="@+id/numberOfRecoveredCases_Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"

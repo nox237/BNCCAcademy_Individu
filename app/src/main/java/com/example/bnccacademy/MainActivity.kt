@@ -3,6 +3,7 @@ package com.example.bnccacademy
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
@@ -34,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         button2.setOnClickListener {
             openActivity3()
         }
+
+        // Turn off visibility on layout numberOfCases
+        Layout_numberOfCases.visibility = View.GONE
     }
 
     private fun openActivity2(){
@@ -74,6 +78,13 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     this@MainActivity.runOnUiThread{
+                        Layout_numberOfCases.visibility = View.VISIBLE
+
+                        progressBar_numberOfCases.visibility = View.GONE
+                        progressBar_numberOfDeathCases.visibility = View.GONE
+                        progressBar_numberOfRecoveredCases.visibility = View.GONE
+                        progressBar_numberOfPositiveCases.visibility = View.GONE
+
                         numberofCases.text = cases
                         numberOfPositiveCases.text = positive
                         numberOfRecoveredCases.text = recovered
