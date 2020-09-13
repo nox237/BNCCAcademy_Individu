@@ -170,6 +170,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ProgressBar
+                android:padding="10sp"
                 android:id="@+id/progressBar_numberOfDeathCases"
                 style="?android:attr/progressBarStyleLarge"
                 android:layout_width="match_parent"
@@ -177,7 +178,6 @@
                 android:progressDrawable="@drawable/circular_progress_bar_white" />
 
             <TextView
-                android:padding="10sp"
                 android:id="@+id/numberOfDeathCases"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
