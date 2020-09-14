@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun infoDialog() {
-        val dialog = Dialog(this)
+        val dialog = Dialog(this, R.style.BottomSheetDialog)
         dialog.setContentView(R.layout.info_dialog_fragment)
         dialog.show()
     }
