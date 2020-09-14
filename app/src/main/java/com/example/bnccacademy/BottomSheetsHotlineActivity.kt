@@ -40,6 +40,11 @@ class BottomSheetsHotlineActivity : BottomSheetDialogFragment() {
         rvHotline.visibility = View.GONE
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NORMAL, R.style. AppBottomSheetDialogTheme)
+    }
+
     private fun getCallback(hotlineAdapter: HotlineAdapter): Callback {
         return object : Callback {
             override fun onFailure(call: Call, e: IOException) {
