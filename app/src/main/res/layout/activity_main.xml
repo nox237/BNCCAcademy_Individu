@@ -261,10 +261,11 @@
 
         <LinearLayout
             android:id="@+id/button"
-            android:layout_width="362sp"
+            android:layout_width="match_parent"
             android:layout_height="90sp"
             android:background="@drawable/rounded_button"
             android:orientation="horizontal"
+            android:layout_margin="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.516"
@@ -314,15 +315,15 @@
 
         <LinearLayout
             android:id="@+id/button2"
-            android:layout_width="362sp"
+            android:layout_width="match_parent"
             android:layout_height="90sp"
-            android:layout_marginTop="20dp"
             android:background="@drawable/rounded_button"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.483"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button"
+            android:layout_margin="20dp"
             android:paddingStart="20sp"
             tools:ignore="RtlSymmetry">
 
