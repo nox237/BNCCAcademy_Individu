@@ -64,6 +64,19 @@
             tools:itemCount="5"
             tools:listitem="@layout/item_hotline" />
 
+        <ProgressBar
+            android:layout_marginTop="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:padding="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:progressDrawable="@drawable/circular_progress_bar_indigo"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

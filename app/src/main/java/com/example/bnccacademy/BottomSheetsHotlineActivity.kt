@@ -37,6 +37,7 @@ class BottomSheetsHotlineActivity : BottomSheetDialogFragment() {
             .build()
 
         okHttpClient.newCall(request).enqueue(getCallback(hotlineAdapter))
+        rvHotline.visibility = View.GONE
     }
 
     private fun getCallback(hotlineAdapter: HotlineAdapter): Callback {
@@ -65,6 +66,8 @@ class BottomSheetsHotlineActivity : BottomSheetDialogFragment() {
                     }
 
                     activity?.runOnUiThread{
+                        progressBar.visibility = View.GONE
+                        rvHotline.visibility = View.VISIBLE
                         hotlineAdapter.updateData(hotlineListFromNetwork)
                     }
 
