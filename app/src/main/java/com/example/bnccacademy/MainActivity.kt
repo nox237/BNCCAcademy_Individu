@@ -1,5 +1,6 @@
 package com.example.bnccacademy
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -35,6 +36,10 @@ class MainActivity : AppCompatActivity() {
             openActivity3()
         }
 
+        imageButton.setOnClickListener {
+            infoDialog()
+        }
+
         // Turn off visibility on layout numberOfCases
         Layout_numberOfCases.visibility = View.GONE
     }
@@ -57,6 +62,12 @@ class MainActivity : AppCompatActivity() {
 
 //        val intent = Intent(this, HotlineActivity::class.java)
 //        startActivity(intent)
+    }
+
+    private fun infoDialog() {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.info_dialog_fragment)
+        dialog.show()
     }
 
     private fun getCallback(): Callback {

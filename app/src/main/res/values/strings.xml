@@ -18,5 +18,7 @@
     <string name="check_emergency_number_to_contact">Check emergency number to contact</string>
     <string name="see_details_by_province_all_over_indonesia">See details by province all over Indonesia</string>
     <string name="type_to_search">Type to Search...</string>
+    <string name="version">V1.0.0</string>
     <string name="Hotline_description">Layanan darurat via telepon yang disediakan oleh Kemkes dan juga Pemprov DKI Jakarta</string>
+    <string name="Info_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
 </resources>
