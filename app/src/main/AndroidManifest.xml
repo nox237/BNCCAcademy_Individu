@@ -17,7 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" android:theme="@style/SecondTheme"/>
-        <activity android:name=".HotlineActivity" android:theme="@style/SecondTheme"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
